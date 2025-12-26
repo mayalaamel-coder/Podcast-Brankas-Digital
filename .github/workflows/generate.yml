@@ -1,0 +1,17 @@
+name: Generate Podcast Audio
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+      - run: pip install edge-tts
+      - run: python main.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hasil-podcast-final
+          path: podcast_output/
+          
