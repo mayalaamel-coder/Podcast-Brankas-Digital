@@ -7,14 +7,14 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.10' # Butuh versi 3.10 ke atas buat Gradio
-      - name: Install Gradio Client
-        run: pip install gradio_client
+          python-version: '3.10'
+      - name: Install Tools Luwes
+        run: pip install gradio_client # Ini alat buat nembak server Chatterbox
       - name: Run Audio Generator
         run: python main.py
       - name: Upload Results
         uses: actions/upload-artifact@v4
         with:
-          name: hasil-podcast-chatterbox-vibe
+          name: hasil-chatterbox-luwes
           path: podcast_output/
           
